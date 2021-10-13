@@ -7,7 +7,56 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-calculator';
-  finalAns = ''
+
+  answer = '';
+  fNan = false;
+  sNan = false;
+  fNUM = 0;
+  sNUM = 0;
+  op = '';
+  empOne = true;
+  empTwo = true;
+
+  getInput1(num: number)
+  {
+    this.fNUM = num;
+  }
+
+  getInput2(num: number)
+  {
+    this.sNUM = num;
+  }
+
+  getBoolean1(nan: boolean)
+  {
+    this.fNan = nan;
+  }
+
+  getBoolean2(nan: boolean)
+  {
+    this.sNan = nan;
+  }
+
+  getRes(ans: string)
+  {
+    this.answer = ans;
+  }
+
+  getOperation(choice: string)
+  {
+    this.op = choice;
+  }
+
+  getEmpty1(field: boolean)
+  {
+    this.empOne = field;
+  }
+
+  getEmpty2(field: boolean)
+  {
+    this.empTwo = field;
+  }
+  /*finalAns = ''
   answer = 0;
   fNum = 0;
   sNum = 0;
@@ -63,11 +112,11 @@ export class AppComponent {
         this.finalAns = "Divisor can not be zero!";
     }
 
-    this.onClick();
-  }
+    //this.onClick();
+  }*/
 
-  onClick()
+  /*onClick()
   {
     console.log(this.fNum + "and" + this.sNum);
-  }
+  }*/
 }

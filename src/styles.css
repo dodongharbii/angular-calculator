@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+.title
+{
+    text-align: center;
+}
+
+.container
+{
+    width: 400px;
+    height: 300px;
+    background-color: gray;
+    margin: auto;
+    border-radius: 35px;
+    padding: 20px;
+}
+
+.label
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.field
+{
+    width: 100%;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+.ans
+{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.buttons
+{
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.btn
+{
+    width: 80px;
+    height: 60px;
+    border-radius: 15px;
+    margin-right: 10px;
+    font-weight: bolder;
+}

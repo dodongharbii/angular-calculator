@@ -1,23 +1,39 @@
 <h1 class="title">Angular Calculator</h1>
 
 <div class="container">
-    <div class="input">
-        <label for="" class="label">First Number:</label>
-        <input (input)="getFInput(inputOne.value)" type="text" class="field" #inputOne><br>
-        <label for="" class="label">Second Number:</label>
-        <input (input)="getSInput(inputTwo.value)" type="text" class="field" #inputTwo>
-    </div>
+    <app-numbers
+    (finalAnswer)="getRes($event)"
+    (fNANVal)="getBoolean1($event)"
+    (sNANVal)="getBoolean2($event)"
+    (fNumVal)="getInput1($event)"
+    (sNumVal)="getInput2($event)"
+    (emptyOne)="getEmpty1($event)"
+    (emptyTwo)="getEmpty2($event)"
+    >
+    </app-numbers>
 
-    <div *ngIf="finalAns && (inputOne.value && inputTwo.value)" class="result">
-        <hr>
-        <p class="ans">&nbsp;<output type="text" [value]="finalAns"></output></p>
-        <hr>
-    </div>
+    <app-result
+    [finalAns]="answer"
+    [fNAN]="fNan"
+    [sNAN]="sNan"
+    [fNum]="fNUM"
+    [sNum]="sNUM"
+    [choice]="op"
+    [emptyF]="empOne"
+    [emptyS]="empTwo"
+    >
+    </app-result>
+<!-- <p>app-html {{fNUM}}</p>
+<p>app-html {{sNUM}}</p>
+<p>app-html {{fNan}}</p>
+<p>app-html {{sNan}}</p>
+<p>app-html {{empOne}}</p>
+<p>app-html {{empTwo}}</p> -->
 
-    <div class="buttons">
-        <button [disabled]="!inputOne.value || !inputTwo.value" (click)="toCalculate('1')" type="button" class="btn">Add</button>
-        <button [disabled]="!inputOne.value || !inputTwo.value" (click)="toCalculate('2')" type="button" class="btn">Subtract</button>
-        <button [disabled]="!inputOne.value || !inputTwo.value" (click)="toCalculate('3')" type="button" class="btn">Multiply</button>
-        <button [disabled]="!inputOne.value || !inputTwo.value" (click)="toCalculate('4')" type="button" class="btn">Divide</button>
-    </div>
+    <app-operations
+    (operation)="getOperation($event)"
+    [emptyF]="empOne"
+    [emptyS]="empTwo"
+    >
+    </app-operations>
 </div>
